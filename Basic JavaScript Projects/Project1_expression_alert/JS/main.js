@@ -1,6 +1,5 @@
-
-var Family = "The Dynasty", Dad = "Mr.Dad", Mom = "Mrs.Mom", Daughter = "Iamdaughter", Son = "Iamson";
-
-document.write(Daughter); 
-
-document.write(3+3);
+function My_First_Function() {
+    var str ="this is the button text!";
+    document.getElementById("Button_Text").innerHTML = str;
+   
+}
