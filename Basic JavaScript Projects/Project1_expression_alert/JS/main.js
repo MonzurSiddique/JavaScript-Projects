@@ -14,4 +14,4 @@ var Sent1 = " and this is the end of the string";
 document.write(Sent1 + Sent2);
 
 //Example of an expression
-document.write(21/3);
+document.write(21 / 3);
