@@ -4,7 +4,7 @@
 window.alert("Hello, world!");
 
 //document.alert method
-document.alert("For the first time - Hello, world!");t
+document.alert("For the first time - Hello, world!");
 
 //creating two variables
 var Sent1 = "This is the beginning of the string";
