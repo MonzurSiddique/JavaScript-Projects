@@ -50,7 +50,7 @@ background-color: rgba(0, 0, 0, 0.8);
 /*Caption Text*/
 
 .text {
-    color: #f2f2f2;
+    color: black;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -61,11 +61,11 @@ background-color: rgba(0, 0, 0, 0.8);
 
 /*Number text (1/3 etc.)*/
 .numbertext {
-    color:white;
+    color: black;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
-    top: 0;
+    top: 10;
 }
 
 /*The dots*/
