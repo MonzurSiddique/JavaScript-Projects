@@ -6,7 +6,7 @@ let activePlayer = 'X';
 //Array to store moves - use this determine winning conditions
 let selectedSquares = [];
 
-//Function to place x or 0 in a square
+//Function to place x or o in a square
 function placeXorO(squareNumber) {
     if (!selectedSquares.some(element => element.includes(squareNumber))) {
         //Variable to hold the HTML element that was clicked
@@ -35,6 +35,7 @@ function placeXorO(squareNumber) {
             setTimeout(function() { computersTurn(); }, 1000);
         }
         //Returning true is needed for the computersTurn() function
+        return true;
     }
     //Picks a random square for computer's turn
     function computersTurn() {
@@ -113,7 +114,7 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
         y = y1;
     
     function animateLineDrawing() {
-        const animationLoop = requestAnimationFrame(animateLineDrawing)
+        const animationLoop = requestAnimationFrame(animateLineDrawing);
         c.clearRect(0, 0, 608, 608);
         c.beginPath();
         c.moveTo(x1, y1);
