@@ -97,7 +97,7 @@ function resetGame() {
 
 //Play audio files
 function audio(audioURL) {
-    let audio = new Audio(audioURL)
+    let audio = new Audio(audioURL);
     audio.play();
 }
 
@@ -122,8 +122,8 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
         c.strokeStyle = 'rgba(70, 255, 33, .8)';
         c.stroke();
         if (x1 <= x2 && y1 <= y2) {
-            if (x < x2) {x += 10; }
-            if (y < y2) {y -= 10; }
+            if (x < x2) { x += 10; }
+            if (y < y2) { y += 10; }
             if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
         }
         if (x1 <= x2 && y1 >= y2) {
@@ -143,5 +143,10 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     audio('./media/winGame.mp3');
     animateLineDrawing();
     setTimeout(function () { clear(); resetGame(); }, 1000);
+}
 
+//Disable click  during the computer's turn
+function disableClick() {
+    body.style.pointerEvents = 'none';
+    setTimeout(function () { body.style.pointerEvents = 'auto'; }, 1000);
 }
