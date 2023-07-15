@@ -7,7 +7,7 @@ let activePlayer = 'X';
 let selectedSquares = [];
 
 //Function to place x or 0 in a square
-function placeXor0(squareNumber) {
+function placeXorO(squareNumber) {
     if (!selectedSquares.some(element => element.includes(squareNumber))) {
         //Variable to hold the HTML element that was clicked
         let select = document.getElementById(squareNumber);
@@ -15,7 +15,7 @@ function placeXor0(squareNumber) {
         if (activePlayer === 'X') {
             select.style.backgroundImage = 'url("images/x.png")';
         } else {
-            select.style.backgroundImage = 'url("images/0.png")';
+            select.style.backgroundImage = 'url("images/o.png")';
         }
         //Adds the square number and player to the array
         selectedSquares.push(squareNumber + activePlayer);
@@ -23,14 +23,14 @@ function placeXor0(squareNumber) {
         checkWinConditions();
         //Changes the active player
         if (activePlayer === 'X') {
-            activePlayer = '0';
+            activePlayer = 'O';
         } else {
             activePlayer = 'X';
         }
         //Function to play the placement audio
         audio('./media/place.mp3');
         //Check if it is Computer's turn
-        if (activePlayer === '0') {
+        if (activePlayer === 'O') {
             disableClick();
             setTimeout(function() { computersTurn(); }, 1000);
         }
@@ -42,8 +42,8 @@ function placeXor0(squareNumber) {
         let pickASquare;
         while (!success) {
             pickASquare = String(Math.floor(Math.random() * 9));
-            if (placeXor0(pickASquare)) {
-                placeXor0(pickASquare);
+            if (placeXorO(pickASquare)) {
+                placeXorO(pickASquare);
                 success = true;
             };
         }
@@ -65,7 +65,7 @@ function checkWinConditions() {
     else if (arrayIncludes('0O', '1O', '2O')) { drawWinLine(50, 100, 558, 100) }
     else if (arrayIncludes('3O', '4O', '5O')) { drawWinLine(50, 304, 558, 304) }
     else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508) }
-    else if (arrayIncludes('O0', '3O', '6O')) { drawWinLine(100, 50, 100, 558) }
+    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 100, 558) }
     else if (arrayIncludes('1O', '4O', '7O')) { drawWinLine(304, 50, 304, 558) }
     else if (arrayIncludes('2O', '5O', '8O')) { drawWinLine(508, 50, 508, 558) }
     else if (arrayIncludes('6O', '4O', '2O')) { drawWinLine(100, 508, 510, 90) }
